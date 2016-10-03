@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:AWPage xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:pages="clr-namespace:Autowont.Pages;assembly=Autowont"
+  x:Class="Autowont.Pages.AdvertisementDetailPage">
+  <ScrollView Padding="10">
+    <StackLayout>
+    <Label Text="{Binding Model.MainTitle}" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+    <Label Text="Технические характеристики " TextColor="Black" FontAttributes="Bold,Italic"></Label>
+    <Label Text="{Binding Model.car.transmission, StringFormat='Коробка передач: {0}'}" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label Text="{Binding Model.car.drive, StringFormat='Привод: {0}'}" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label Text="Количество дверей: 4" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label Text="{Binding Model.car.color, StringFormat='Цвет: {0}'}" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label Text="{Binding Model.car.fuel, StringFormat='Топливо: {0}'}" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label Text="{Binding Model.car.engineVolume, StringFormat='Объем двигателя: {0} л'}" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label Text="Мощность 153.088 кВт/208 л.с." TextColor="Green" FontAttributes="Italic"></Label>
+    <Label></Label>
+    <Label Text="Комфорт: товаоыаовипв воаолвтла оатвлоатлывд лтваотыдаьллы товыатлолыватлыво тавоыталотыволат лтаоытвлоатывл лдлфвыж лоатывлат лыалваьлыва тавтыоат оывалаль лтватыт ва" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label></Label>
+    <Label Text="Мультимедиа: тволатыволаиовыаи воаиывораи иаоивлыатвол оватыовталоы волыатыв тлоалвтылоа лвдталывт тлывоатыо" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label></Label>
+    <Label Text="Прочее: ывлаолывоа ваоаоырв ыовароывра ловарыо лфывовлф лваолыво тлавоылдва лватал лаовыла аывлалвы лвыало ловаыдлаьыв " TextColor="Green" FontAttributes="Italic"></Label>
+
+    <Label Text="Безопасность: варрыво оывлаоы лоывалывт лывоааллыв лваывльа лаылва лывьбячь выоат лдлвыда валаьл лавыьаль адывжад двьад" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label></Label>
+    <Label Text="Состояние: тавоаывлатлывоалоывал вляоаывао длвялыьссь лвсььсялсьля лясвлсвь" TextColor="Green" FontAttributes="Italic"></Label>
+    <Label></Label>
+    <Label Text="Срочно! тавоаывлатлывоалоывал вляоаывао длвялыьссь лвсььсялсьля лясвлсвь" TextColor="Green" FontAttributes="Italic"></Label>
+    </StackLayout>
+  </ScrollView>
+</pages:AWPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Autowont.Views.CheckBox">
+  <Frame
+        HasShadow="False"
+        BackgroundColor="Silver"
+        Padding="2,2,2,2">
+    <Image
+        x:Name="Box"
+        BackgroundColor="White">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer
+            Tapped="OnTapGestureRecognizerTapped" />
+      </Image.GestureRecognizers>
+    </Image>
+  </Frame>
+</ContentView>

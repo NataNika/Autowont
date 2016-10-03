@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:AWPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Autowont.Pages;assembly=Autowont"
+             xmlns:views="clr-namespace:Autowont.Views;assembly=Autowont"
+             x:Class="Autowont.Pages.SearchPage">
+  <StackLayout>
+    <!--<SearchBar TextColor="Gray" PlaceholderColor="Gray" BackgroundColor="White" ></SearchBar>-->
+    
+    <StackLayout Padding="5,5">
+
+      <Grid HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions >
+          <RowDefinition Height="35"></RowDefinition>
+          <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="White" Padding="5" HasShadow="False">
+          <Image Source="Auto.png" BackgroundColor="White" Aspect="AspectFit"></Image>
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ButtonPressedCommand}"/>
+          </Frame.GestureRecognizers>
+        </Frame>
+        <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="White" Padding="5" HasShadow="False">
+          <Image Source="Moto.png" BackgroundColor="White" Aspect="AspectFit" />
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ButtonPressedCommand}"/>
+          </Frame.GestureRecognizers>
+        </Frame>
+        <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="White" Padding="5" HasShadow="False">
+          <Image Source="Fura.png" BackgroundColor="White" Aspect="AspectFit" />
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ButtonPressedCommand}"/>
+          </Frame.GestureRecognizers>
+        </Frame>
+        <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="White" Padding="5" HasShadow="False">
+          <Image Source="Tractor.png" BackgroundColor="White" Aspect="AspectFit" />
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ButtonPressedCommand}"/>
+          </Frame.GestureRecognizers>
+        </Frame>
+        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Padding="5" HasShadow="False">
+          <Image Source="Trailer.png" BackgroundColor="White" Aspect="AspectFit" />
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ButtonPressedCommand}"/>
+          </Frame.GestureRecognizers>
+        </Frame>
+        <Frame Grid.Row="1" Grid.Column="2" BackgroundColor="White" Padding="5" HasShadow="False">
+          <Image Source="Boats.png" BackgroundColor="White" Aspect="AspectFit" />
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ButtonPressedCommand}"/>
+          </Frame.GestureRecognizers>
+        </Frame>
+      </Grid>
+      <StackLayout>
+        <StackLayout.Triggers>
+          <DataTrigger TargetType="StackLayout" Binding="{Binding IsPressed}" Value="true"> 
+            <Setter Property="IsVisible" Value="true"/>
+          </DataTrigger>
+          <DataTrigger TargetType="StackLayout" Binding="{Binding IsPressed}" Value="false">
+            <Setter Property="IsVisible" Value="false"/>
+          </DataTrigger>
+        </StackLayout.Triggers>
+      <Grid >
+        <Grid.RowDefinitions >
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <views:BindablePicker Grid.Row="0" Grid.Column="0" BackgroundColor="White" Title="Марка" SelectedItem="{Binding BrandItem, Mode=TwoWay}" ItemsSource="{Binding Brands}"></views:BindablePicker>
+        <views:BindablePicker Grid.Row="1" Grid.Column="0" BackgroundColor="White" Title="Модель" SelectedItem="{Binding CarModelItem, Mode=TwoWay}" ItemsSource="{Binding CarModels}"></views:BindablePicker>
+
+        <views:BindablePicker Grid.Row="2" Grid.Column="0" BackgroundColor="White" Title="Кузов" SelectedItem="{Binding BodyTypeItem, Mode=TwoWay}" ItemsSource="{Binding BodyTypes}" ></views:BindablePicker>
+        <views:BindablePicker Grid.Row="3" Grid.Column="0" BackgroundColor="White" Title="Цвет" SelectedItem="{Binding ColorItem, Mode=TwoWay}" ItemsSource="{Binding Colors}"></views:BindablePicker>
+
+        <Entry Grid.Row="4" Grid.Column="0" BackgroundColor="White" Placeholder="Год" FontSize="18"></Entry>
+        <Entry Grid.Row="5" Grid.Column="0" BackgroundColor="White" Placeholder="Пробег" FontSize="18"></Entry>
+
+        <views:BindablePicker Grid.Row="0" Grid.Column="1" BackgroundColor="White" Title="КПП" SelectedItem="{Binding TransmisionItem, Mode=TwoWay}" ItemsSource="{Binding Transmissions}"></views:BindablePicker>
+        <views:BindablePicker Grid.Row="1" Grid.Column="1" BackgroundColor="White" Title="Привод" SelectedItem="{Binding DriveItem, Mode=TwoWay}" ItemsSource="{Binding DriveTypes}"></views:BindablePicker>
+
+        <Entry Grid.Row="2" Grid.Column="1" BackgroundColor="White" Placeholder="Двигатель" FontSize="18"></Entry>
+        <views:BindablePicker Grid.Row="3" Grid.Column="1" BackgroundColor="White" Title="Топливо" SelectedItem="{Binding FuelTypeItem, Mode=TwoWay}" ItemsSource="{Binding FuelTypes}"></views:BindablePicker>
+
+        <views:BindablePicker Grid.Row="4" Grid.Column="1" BackgroundColor="White" Title="Локация" SelectedItem="{Binding StateItem, Mode=TwoWay}" ItemsSource="{Binding States}"></views:BindablePicker>
+        <Entry Grid.Row="5" Grid.Column="1" BackgroundColor="White" Placeholder="Цена" FontSize="18"></Entry>
+
+        
+      </Grid>
+      <Button Text="{Binding ButtonSearchText}" Command="{Binding SearchCommand}" BackgroundColor="Red" TextColor="White" FontFamily="SanFrancisco" HeightRequest="45"></Button>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+</pages:AWPage>

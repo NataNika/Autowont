@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:AWPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Autowont.Pages;assembly=Autowont"
+             xmlns:views="clr-namespace:Autowont.Views;assembly=Autowont"
+             x:Class="Autowont.Pages.ResultSearchPage">
+
+
+  <StackLayout>
+
+    <ListView ItemsSource="{Binding Items}"
+                SeparatorVisibility="None"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                RowHeight="160">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="10,5">
+              
+              <Frame BackgroundColor="White" Padding="2" VerticalOptions="FillAndExpand" HasShadow="False">
+                <Grid >
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                  </Grid.ColumnDefinitions>
+                  <Frame Grid.Row="0" Grid.Column="0"  Padding="0" VerticalOptions="FillAndExpand" HasShadow="False">
+                    <Image Source="{Binding MainPicture}" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+                  </Frame >
+                  <StackLayout Grid.Row="0" Grid.Column="1" Padding="0" Spacing="0">
+                    <Label Text="{Binding MainTitle}" TextColor="Black" FontAttributes="Bold,Italic" HorizontalOptions="Center"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                      <Label Text="{Binding price.price}" TextColor="Green" FontAttributes="Bold,Italic" FontSize="12"></Label>
+                      <Label Text="{Binding price.currency}" TextColor="Green" FontAttributes="Bold,Italic" FontSize="12"></Label>
+                    </StackLayout>
+                    <Label Text="{Binding car.fuel, StringFormat='Топливо: {0};'}" TextColor="#044E04" FontAttributes="Italic" FontSize="10"></Label>
+                    <Label Text="{Binding car.engineVolume, StringFormat='Объем двигателя: {0}л;'}" TextColor="#044E04" FontAttributes="Italic" FontSize="10"></Label>
+                    <Label Text="{Binding car.kilometrage, StringFormat='Пробег: {0} км;'}" TextColor="#044E04" FontAttributes="Italic" FontSize="10"></Label>
+                    <Label Text="{Binding car.transmission, StringFormat='Коробка передач: {0};'}" TextColor="#044E04" FontAttributes="Italic" FontSize="10"></Label>
+                    <Label Text="{Binding city, StringFormat='г.{0}'}" TextColor="#044E04" FontAttributes="Italic" FontSize="12"></Label>
+                  </StackLayout>
+                  <StackLayout Grid.Row="1"  Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <Label  Text="{Binding additionalData}" TextColor="Black"  FontSize="12"></Label>
+                    <views:CheckBox Checked="{Binding IsFavorite}" HeightRequest="24" HorizontalOptions="End" VerticalOptions="End"
+                                    WidthRequest="24" CheckCommand="{Binding CheckFavoriteCommand}">
+                      <!--<views:CheckBox.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CheckFavoriteCommand}"></TapGestureRecognizer>
+                      </views:CheckBox.GestureRecognizers>-->
+                    </views:CheckBox>
+                  </StackLayout>
+
+                </Grid>
+              </Frame>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</pages:AWPage>
